@@ -15,9 +15,11 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 5
 let env = 'prod';
 
 if (env === 'dev' || env === 'uat' || env === 'prod') {
+    console.log('index env prod')
     app.use('/', express.static(path.join(__dirname, 'dist')));
     app.use('/dist', express.static(path.join(__dirname, 'dist')));
 } else {
+    console.log('index env local')
     app.use('/', express.static(path.join(__dirname, '..', 'src')));
     app.use('/src', express.static(path.join(__dirname, '..', 'src')));
 }
@@ -31,7 +33,7 @@ let port = '';
 if(env === 'local'){
     port = 5000;
 }else if(env === 'prod'){
-    port = 3008;
+    port = 3020;
 }
 
 
