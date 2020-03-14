@@ -11,29 +11,28 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
 
-// const { env } = require("./lib/databaseMySQL");
-let env = 'prod';
+const { env } = require("./lib/databaseMySQL");
 
 if (env === 'dev' || env === 'uat' || env === 'prod') {
-    console.log('index env prod')
     app.use('/', express.static(path.join(__dirname, 'dist')));
     app.use('/dist', express.static(path.join(__dirname, 'dist')));
 } else {
-    console.log('index env local')
     app.use('/', express.static(path.join(__dirname, '..', 'src')));
     app.use('/src', express.static(path.join(__dirname, '..', 'src')));
 }
 
 const mainRoute = require('./routes/mainRoute');
+const appRouting = require('./routes/appRouting');
 
+app.use('/api', appRouting);
 app.use('/',mainRoute);
 
-let port = '';
+let port ='';
 
 if(env === 'local'){
     port = 5000;
 }else if(env === 'prod'){
-    port = 3020;
+    port = 3008;
 }
 
 
