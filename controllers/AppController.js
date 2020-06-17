@@ -1,14 +1,35 @@
 const AppModel = require('../models/AppModels.js');
 const Mailer = require('../models/Mailer.js');
 
-const getprayersList = async function (req, res, next) {
-    const params = {
-        date:req.body.date
-    }
+
+const getTabRelatedList = async function (req, res, next) {
     try {
-        const newActivity = new AppModel(params);
-        const result = await newActivity.getprayersList();
-        res.send({ result: result});              
+        console.log(req.body)
+        const result = await new AppModel({type: req.body.type}).getTabRelatedList();
+        console.log(result)
+        res.send({ resultList: result });
+    } catch (err) {
+        next(err);
+    }
+}
+
+const getContactInfo = async function (req, res, next) {
+    try {
+        const newActivity = new AppModel({});
+        const result = await newActivity.getContactInfo();
+        res.send({ result});    
+        console.log(result)          
+    } catch (err) {
+        
+        next(err);
+    }
+}
+
+const getAbout = async function (req, res, next) {
+    try {
+        const newActivity = new AppModel({});
+        const result = await newActivity.getAbout();
+        res.send({ result});              
     } catch (err) {
         next(err);
     }
@@ -36,6 +57,9 @@ const sendMail = async function (req, res, next) {
 
 
 module.exports = {    
-    getprayersList : getprayersList,
+    // getprayersList : getprayersList,
     sendMail : sendMail,
+    getContactInfo : getContactInfo,
+    getAbout:getAbout,
+    getTabRelatedList:getTabRelatedList,
 };
