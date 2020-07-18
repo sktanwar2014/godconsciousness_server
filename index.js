@@ -6,8 +6,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(cors());  
-// app.use(cors());  
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
@@ -33,7 +32,7 @@ let port ='';
 if(env === 'local'){
     port = 5000;
 }else if(env === 'prod'){
-    port = 3015;
+    port = 3020;
 }
 
 
