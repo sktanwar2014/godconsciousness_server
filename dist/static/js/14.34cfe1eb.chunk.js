@@ -1,2 +1,0 @@
-(this["webpackJsonpa1abilities_in_node-react"]=this["webpackJsonpa1abilities_in_node-react"]||[]).push([[14],{178:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return c}));var a=t(0),i=t.n(a);t(14),t(4);function c(e){return i.a.createElement(a.Fragment,null,i.a.createElement("section",{class:"site-section"},i.a.createElement("div",{class:"container"},i.a.createElement("div",{class:"row align-items-center"},"Coming Soon"))))}}}]);
-//# sourceMappingURL=14.34cfe1eb.chunk.js.map

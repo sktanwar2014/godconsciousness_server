@@ -1,0 +1,2 @@
+(this["webpackJsonpa1abilities_in_node-react"]=this["webpackJsonpa1abilities_in_node-react"]||[]).push([[16],{181:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return c}));var a=n(0),i=n.n(a);n(14),n(4);function c(e){return i.a.createElement(a.Fragment,null,i.a.createElement("section",{class:"site-section"},i.a.createElement("div",{class:"container"},i.a.createElement("div",{class:"row align-items-center"}))))}}}]);
+//# sourceMappingURL=16.675832d0.chunk.js.map
